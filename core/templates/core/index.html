@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ERP System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .feature-icon {
+            width: 4rem;
+            height: 4rem;
+            border-radius: .75rem;
+        }
+    </style>
+</head>
+<body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
+        <div class="container">
+            <a class="navbar-brand" href="#">株式会社ERPデモ - 統合業務システム</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="p-5 mb-4 bg-white rounded-3 shadow-sm">
+            <div class="container-fluid py-5">
+                <h1 class="display-5 fw-bold">業務システムへようこそ</h1>
+                <p class="col-md-8 fs-4">本システムは、人事、販売、在庫管理を一元的に行うためのプラットフォームです。</p>
+                <a class="btn btn-primary btn-lg" href="/admin/" role="button">管理画面へログイン</a>
+            </div>
+        </div>
+
+        <div class="row align-items-md-stretch">
+            <div class="col-md-6 mb-4">
+                <div class="h-100 p-5 text-white bg-success rounded-3">
+                    <h2>現在の受注件数</h2>
+                    <p class="display-4">{{ order_count }} 件</p>
+                    <a href="/admin/sales/order/" class="btn btn-outline-light">受注一覧を見る</a>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="h-100 p-5 bg-warning text-dark rounded-3">
+                    <h2>在庫アラート</h2>
+                    <p>在庫が10個未満の商品があります。</p>
+                    <ul class="list-group list-group-flush mb-3">
+                        {% for stock in low_stock_items %}
+                            <li class="list-group-item bg-warning border-0">{{ stock.product.name }}: {{ stock.quantity }}個</li>
+                        {% empty %}
+                            <li class="list-group-item bg-warning border-0">現在、在庫不足の商品はありません。</li>
+                        {% endfor %}
+                    </ul>
+                    <a href="/admin/inventory/stock/" class="btn btn-outline-dark">在庫状況を確認</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+            <div class="col d-flex align-items-start">
+                <div class="icon-square bg-light text-dark flex-shrink-0 me-3">
+                    <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"/></svg>
+                </div>
+                <div>
+                    <h2>人事管理 (HR)</h2>
+                    <p>従業員情報の管理、部署・役職の設定を行います。</p>
+                    <a href="/admin/hr/employee/" class="btn btn-secondary">従業員一覧 &raquo;</a>
+                </div>
+            </div>
+            <div class="col d-flex align-items-start">
+                <div class="icon-square bg-light text-dark flex-shrink-0 me-3">
+                    <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"/></svg>
+                </div>
+                <div>
+                    <h2>販売管理 (Sales)</h2>
+                    <p>顧客情報の管理、見積・受注・請求業務を行います。</p>
+                    <a href="/admin/sales/order/" class="btn btn-secondary">受注一覧 &raquo;</a>
+                </div>
+            </div>
+            <div class="col d-flex align-items-start">
+                <div class="icon-square bg-light text-dark flex-shrink-0 me-3">
+                    <svg class="bi" width="1em" height="1em"><use xlink:href="#tools"/></svg>
+                </div>
+                <div>
+                    <h2>在庫管理 (Inventory)</h2>
+                    <p>商品在庫の管理、入出庫履歴の確認を行います。</p>
+                    <a href="/admin/inventory/stock/" class="btn btn-secondary">在庫一覧 &raquo;</a>
+                </div>
+            </div>
+        </div>
+
+        <footer class="pt-3 mt-4 text-muted border-top">
+            &copy; 2026 ERP Demo Corp
+        </footer>
+    </div>
+</body>
+</html>
