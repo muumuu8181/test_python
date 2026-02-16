@@ -1,0 +1,46 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: #fff;
+    font-family: "SF Mono", "Monaco", "Inconsolata", "Fira Mono", "Droid Sans Mono", "Source Code Pro", monospace;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+}
+
+#clock-container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+#time {
+    font-size: 18vw;
+    font-weight: bold;
+    line-height: 1;
+    letter-spacing: -0.05em;
+}
+
+#date {
+    font-size: 5vw;
+    margin-top: 2vh;
+    color: #888;
+}
+
+@media (orientation: landscape) {
+    #time {
+        font-size: 25vh;
+    }
+    #date {
+        font-size: 6vh;
+    }
+}
