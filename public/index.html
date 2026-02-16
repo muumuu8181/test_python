@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>豊臣秀吉 | 天下人への道</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Shippori+Mincho:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="fade-in">豊臣 秀吉</h1>
+            <p class="subtitle fade-in-delay">草履取りから天下人へ</p>
+        </div>
+        <div class="kamon">
+            <!-- 五七の桐 -->
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Goshichi_no_kiri.svg/1200px-Goshichi_no_kiri.svg.png" alt="五七の桐" width="100">
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#about">人となり</a></li>
+            <li><a href="#achievements">功績</a></li>
+            <li><a href="#gallery">絵巻</a></li>
+            <li><a href="#contact">文通</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="about" class="section">
+            <div class="container">
+                <h2 class="section-title">人となり</h2>
+                <div class="content-wrapper">
+                    <div class="text-content">
+                        <p>尾張国愛知郡中村郷の下層民の家に生まれる。<br>幼名は日吉丸。</p>
+                        <p>織田信長公に仕え、草履取りから異例の出世を果たす。<br>「人たらし」と称される人心掌握術と、類稀なる機転で数々の難局を乗り越えてきた。</p>
+                        <p>本能寺の変の後、山崎の戦いで明智光秀を討ち、信長公の後継者としての地位を確立。<br>関白、太閤となり、遂に天下統一を成し遂げる。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="achievements" class="section alt-bg">
+            <div class="container">
+                <h2 class="section-title">主な功績</h2>
+                <div class="achievements-grid">
+                    <div class="card fade-up">
+                        <h3>墨俣一夜城</h3>
+                        <p>敵地での築城をわずかな期間で完遂し、織田軍の美濃攻略の足掛かりを作った。</p>
+                    </div>
+                    <div class="card fade-up">
+                        <h3>金ヶ崎の退き口</h3>
+                        <p>浅井長政の裏切りによる撤退戦で殿（しんがり）を務め、信長公を無事に逃がした。</p>
+                    </div>
+                    <div class="card fade-up">
+                        <h3>中国大返し</h3>
+                        <p>本能寺の変を知り、備中高松城から京都へ驚異的な速度で軍を返し、明智光秀を討った。</p>
+                    </div>
+                    <div class="card fade-up">
+                        <h3>太閤検地</h3>
+                        <p>全国の土地を調査し、石高制を確立。近世封建社会の基礎を築いた。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery" class="section">
+            <div class="container">
+                <h2 class="section-title">絵巻</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item fade-up">
+                        <div class="placeholder-img" style="background: linear-gradient(45deg, #d4af37, #fdf5e6);">大阪城</div>
+                    </div>
+                    <div class="gallery-item fade-up">
+                        <div class="placeholder-img" style="background: linear-gradient(45deg, #333, #000);">黄金の茶室</div>
+                    </div>
+                    <div class="gallery-item fade-up">
+                        <div class="placeholder-img" style="background: linear-gradient(45deg, #800000, #ff4500);">醍醐の花見</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section alt-bg">
+            <div class="container">
+                <h2 class="section-title">文通</h2>
+                <p class="center-text">茶会への招待状をお送りします。</p>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="name">御芳名</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">文箱（メールアドレス）</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">文（メッセージ）</label>
+                        <textarea id="message" name="message" rows="4"></textarea>
+                    </div>
+                    <button type="submit" class="btn-gold">送信</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 1598 Toyotomi Hideyoshi. All rights reserved.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
