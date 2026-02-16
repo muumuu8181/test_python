@@ -1,0 +1,25 @@
+openapi: 3.0.3
+info:
+  title: Large Scale Project API
+  version: 1.0.0
+  description: API template for large-scale projects. Uses Domain-Driven Design (DDD) structure.
+
+servers:
+  - url: http://localhost:8080/api/v1
+    description: Local Development Server
+
+paths:
+  # Paths are aggregated from domains
+  /users:
+    $ref: './domains/users/index.yaml#/paths/~1users'
+  /users/{userId}:
+    $ref: './domains/users/index.yaml#/paths/~1users~1{userId}'
+
+components:
+  schemas:
+    # Shared schemas can be referenced directly or via domain files
+    Error:
+      $ref: './shared/schemas/Error.yaml'
+  parameters:
+    PaginationLimit:
+      $ref: './shared/parameters/Pagination.yaml'

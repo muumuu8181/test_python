@@ -1,0 +1,12 @@
+type: object
+required:
+  - code
+  - message
+properties:
+  code:
+    type: integer
+    format: int32
+    example: 404
+  message:
+    type: string
+    example: "Resource not found"
