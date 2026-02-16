@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="p-5 mb-4 bg-light rounded-3">
+    <div class="container-fluid py-5">
+      <h1 class="display-5 fw-bold">Welcome to Our Corporate CMS</h1>
+      <p class="col-md-8 fs-4">We provide excellent services and solutions for your business needs.</p>
+      <a class="btn btn-primary btn-lg" href="{% url 'contact' %}" role="button">Contact Us</a>
+    </div>
+</div>
+
+<div class="row align-items-md-stretch">
+    <div class="col-md-12">
+        <h2 class="mb-4">Latest News</h2>
+        <div class="row">
+            {% for post in latest_posts %}
+            <div class="col-md-4 mb-3">
+                <div class="card h-100">
+                    {% if post.image %}
+                    <img src="{{ post.image.url }}" class="card-img-top" alt="{{ post.title }}" style="height: 200px; object-fit: cover;">
+                    {% endif %}
+                    <div class="card-body">
+                        <h5 class="card-title">{{ post.title }}</h5>
+                        <p class="card-text">{{ post.content|striptags|truncatewords:20 }}</p>
+                        <a href="{% url 'post_detail' post.slug %}" class="btn btn-primary">Read more</a>
+                    </div>
+                    <div class="card-footer text-muted">
+                        {{ post.created_on|date:"M d, Y" }}
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <div class="col-12">
+                <p>No news available yet.</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,48 +1,72 @@
-# Python Visual Effects 🎬✨
+# Corporate CMS
 
-Python で作成した美しい視覚効果とアニメーションのコレクション
+A production-ready Corporate Content Management System built with Django.
 
-## 機能 🌟
+## Features
 
-- **🌈 レインボーテキスト**: 文字が色とりどりに表示される効果
-- **📝 タイプライター効果**: 文字が一文字ずつゆっくり現れる演出
-- **🖍️ カラータイプライター効果**: 文字ごとに色が変わるタイプライティング
-- **🔄 スピナーエフェクト**: くるくる回るスピナーアニメーション
-- **💻 マトリックス風エフェクト**: 日本語文字が緑色で画面を流れる
-- **💥 爆発アニメーション**: 殡階的に拡大する爆発エフェクト
+- **Core Pages:** Manage static pages (About, Services, etc.) with a Rich Text Editor.
+- **News/Blog:** Post company news with images, categories, and tags.
+- **Contact Form:** Secure contact form with admin notification (messages saved to DB).
+- **Admin Interface:** Fully customized admin dashboard for easy content management.
+- **Responsive Design:** Built with Bootstrap 5.
 
-## 実行方法 🚀
+## Tech Stack
 
-```bash
-python3 hello.py
-```
+- Python 3.12+
+- Django 4.2+
+- SQLite (Development) / PostgreSQL (Production ready)
+- Bootstrap 5
+- Django Summernote (WYSIWYG Editor)
 
-## 必要な環境 📋
+## Setup Instructions
 
-- Python 3.x
-- ターミナル/コマンドプロンプト (カラー表示対応)
+1.  **Clone the repository:**
+    ```bash
+    git clone <repository-url>
+    cd <repository-folder>
+    ```
 
-## デモ 🎥
+2.  **Create a virtual environment:**
+    ```bash
+    python -m venv venv
+    source venv/bin/activate  # On Windows: venv\Scripts\activate
+    ```
 
-実行すると以下のエフェクトが順番に表示されます：
+3.  **Install dependencies:**
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-1. 長文のタイプライター効果でメッセージが表示
-2. カラータイプライター効果
-3. スピナーエフェクト
-4. レインボーカラーでテキストが輝く
-5. 日本語文字のマトリックス風エフェクト
-6. 爆発アニメーション
+4.  **Run Migrations:**
+    ```bash
+    python manage.py migrate
+    ```
 
-## 技術詳細 🔧
+5.  **Create a Superuser:**
+    ```bash
+    python manage.py createsuperuser
+    ```
 
-- **カラーエフェクト**: ANSI エスケープコードを使用
-- **アニメーション**: time.sleep() による時間制御
-- **文字セット**: 日本語ひらがな + 数字の組み合わせ
+6.  **Run the Server:**
+    ```bash
+    python manage.py runserver
+    ```
+    Or use the helper script:
+    ```bash
+    ./run.sh
+    ```
 
-## 作成者 👨‍💻
+## Usage
 
-Claude と協力して作成された視覚効果プロジェクト
+1.  Access the Admin Panel at `http://127.0.0.1:8000/admin/`.
+2.  Login with your superuser credentials.
+3.  Create Pages and News Posts.
+4.  View the site at `http://127.0.0.1:8000/`.
 
----
+## Production Deployment Notes
 
-*美しいターミナルアートをお楽しみください！* ✨
+- Set `DEBUG = False` in `config/settings.py`.
+- Configure `ALLOWED_HOSTS`.
+- Use a production database like PostgreSQL.
+- Serve static files using Nginx/Apache.
+- Use Gunicorn as the WSGI server.
