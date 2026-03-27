@@ -1,0 +1,25 @@
+get:
+  summary: Get a user by ID
+  tags:
+    - Users
+  parameters:
+    - name: userId
+      in: path
+      required: true
+      schema:
+        type: string
+        format: uuid
+      description: The ID of the user to retrieve
+  responses:
+    '200':
+      description: User details
+      content:
+        application/json:
+          schema:
+            $ref: '../schemas/User.yaml'
+    '404':
+      description: User not found
+      content:
+        application/json:
+          schema:
+            $ref: '../../../shared/schemas/Error.yaml'

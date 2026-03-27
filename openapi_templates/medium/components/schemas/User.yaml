@@ -1,0 +1,14 @@
+type: object
+required:
+  - id
+  - username
+properties:
+  id:
+    $ref: './UserId.yaml'
+  username:
+    type: string
+    example: "johndoe"
+  email:
+    type: string
+    format: email
+    example: "john.doe@example.com"
