@@ -2,20 +2,22 @@ import time
 import random
 import os
 
+
 def rainbow_text(text):
-    colors = ['\033[91m', '\033[92m', '\033[93m', '\033[94m', '\033[95m', '\033[96m']
-    reset = '\033[0m'
-    
+    colors = ["\033[91m", "\033[92m", "\033[93m", "\033[94m", "\033[95m", "\033[96m"]
+    reset = "\033[0m"
+
     for char in text:
         color = random.choice(colors)
-        print(f"{color}{char}{reset}", end='', flush=True)
+        print(f"{color}{char}{reset}", end="", flush=True)
         time.sleep(0.1)
     print()
+
 
 def matrix_effect():
     chars = "01アイウエオカキクケコサシスセスミチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン"
     width = 50
-    
+
     for _ in range(10):
         line = ""
         for _ in range(width):
@@ -23,32 +25,36 @@ def matrix_effect():
         print(f"\033[92m{line}\033[0m")
         time.sleep(0.05)
 
+
 def typewriter_effect(text, delay=0.05):
     for char in text:
-        print(char, end='', flush=True)
+        print(char, end="", flush=True)
         time.sleep(delay)
     print()
+
 
 # 文字ごとに色が変化するタイプライター効果
 def colored_typewriter_effect(text, delay=0.05):
-    colors = ['\033[91m', '\033[92m', '\033[93m', '\033[94m', '\033[95m', '\033[96m']
-    reset = '\033[0m'
+    colors = ["\033[91m", "\033[92m", "\033[93m", "\033[94m", "\033[95m", "\033[96m"]
+    reset = "\033[0m"
     for char in text:
         color = random.choice(colors)
-        print(f"{color}{char}{reset}", end='', flush=True)
+        print(f"{color}{char}{reset}", end="", flush=True)
         time.sleep(delay)
     print()
 
+
 # シンプルなスピナーアニメーション
 def spinner_effect(duration=2):
-    spinner = ['|', '/', '-', '\\']
+    spinner = ["|", "/", "-", "\\"]
     end_time = time.time() + duration
     idx = 0
     while time.time() < end_time:
-        print(spinner[idx % len(spinner)], end='\r', flush=True)
+        print(spinner[idx % len(spinner)], end="\r", flush=True)
         time.sleep(0.1)
         idx += 1
-    print(' ', end='\r')
+    print(" ", end="\r")
+
 
 def explosion_effect():
     frames = [
@@ -56,14 +62,15 @@ def explosion_effect():
         " ✨💥✨ ",
         "  ⭐✨💥✨⭐  ",
         "   🌟⭐✨💥✨⭐🌟   ",
-        "    🎆🌟⭐✨💥✨⭐🌟🎆    "
+        "    🎆🌟⭐✨💥✨⭐🌟🎆    ",
     ]
-    
+
     for frame in frames:
-        os.system('clear' if os.name == 'posix' else 'cls')
+        os.system("clear" if os.name == "posix" else "cls")
         print("\n" * 10)
         print(f"{'        ' * 2}{frame}")
         time.sleep(0.3)
+
 
 print("🎬 Claude エフェクトショー開始！")
 time.sleep(1)
