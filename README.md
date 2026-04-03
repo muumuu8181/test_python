@@ -46,3 +46,22 @@ Claude と協力して作成された視覚効果プロジェクト
 ---
 
 *美しいターミナルアートをお楽しみください！* ✨
+
+## 🌟 注目のおすすめリポジトリ (Python TUI/CLI)
+
+本プロジェクトと同じく、ターミナルでの視覚効果やUI構築において、開発が活発で有望なリポジトリを紹介します。
+
+1.  **[PyTermGUI](https://github.com/bczsalba/pytermgui)**
+    -   **特徴**: 外部依存関係を持たない軽量なTUIフレームワーク。独自のマークアップ言語「TIM」を使用し、簡潔にリッチなインターフェースを構築できます。アニメーションやマウス操作にも対応しています。
+
+2.  **[Trogon](https://github.com/Textualize/trogon)**
+    -   **特徴**: Clickで作成したCLIツールを、わずかなコード変更でTextualベースのTUIアプリケーションに自動変換します。既存のCLIツールのユーザビリティを劇的に向上させます。
+
+3.  **[Dooit](https://github.com/dooit-org/dooit)**
+    -   **特徴**: Textualフレームワークで構築された、モダンで高速なTodo管理ツール。Vimライクな操作感と高いカスタマイズ性が魅力で、ターミナル愛好家に最適です。
+
+4.  **[Harlequin](https://github.com/tconbeer/harlequin)**
+    -   **特徴**: ターミナルで動作する本格的なSQL IDE（統合開発環境）。DuckDB、SQLite、PostgreSQLなどに対応し、データの可視化やクエリ実行がスムーズに行えます。
+
+5.  **[Term-Image](https://github.com/AnonymouX47/term-image)**
+    -   **特徴**: ターミナル上で画像を高解像度で表示するためのライブラリ。Kittyなどのプロトコルに対応し、CLIツールに画像プレビュー機能を組み込む際に非常に強力です。
